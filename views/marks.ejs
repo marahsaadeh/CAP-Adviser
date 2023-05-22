@@ -1,0 +1,33 @@
+  <%- include('./partials/header') %>
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <div class="container px-5" style="margin-left: 80px;">
+      <a class="navbar-brand" href="/"><span class="fw-bolder text-primary">CAP Advisor</span></a>  
+  </div>
+</nav>
+  <form method="post" action="marks/successful" class="form-floating mb-3"
+    style=" width: 100%; height: 90%;  display: grid; grid-template-columns: 1fr 1fr 1fr; padding-bottom: 40px;">
+    <% courses.forEach((course)=> { %>
+      <div style="margin-left: 140px; margin-top:20px;" >
+        
+        <p class="title-txt txt-clr">
+          <%= course.name %>
+        </p>
+        <select class="form-select form-select-sm" style="width: 200px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" name="<%= course.id %>">
+          <option selected value="noActive">لم ادرسه بعد</option>
+          <option value="Good">Good</option>
+          <option value="Fair">Fair</option>
+          <option value="Poor">Poor</option>
+        </select>
+      </div>
+      <% }) %> 
+      <div style=" 
+      margin-left: 95%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;">
+      <button type="submit" class="btn btn-primary " >Submit</button></div>
+  </form>
+
+
+  <%- include('./partials/footer') %>

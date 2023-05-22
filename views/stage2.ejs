@@ -1,0 +1,44 @@
+<%- include('./partials/header') %>
+<body class="d-flex flex-column h-100 bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <div class="container px-5">
+        <a class="navbar-brand" href="/"><span class="fw-bolder text-primary">CAP Advisor</span></a>  
+    </div>
+</nav>
+      <form class="bg-white px-4" action="/stage2" method="POST" style="width: 100%; height: 100%; ">
+        <% for (let i=0; i < questionsValue.questions.length; i++) { %>
+          <div class="card overflow-hidden shadow rounded-4 border-0 " style="padding:40px; margin-top: 70px; margin-left: 200px; margin-right: 200px;">
+            <div class="card-body p-0 ">
+          <p class="fw-bold" style="font-size: 24px; font-family: arial;">Question <%= questionsValue.questions[i].questionNumber %>: <%=
+              questionsValue.questions[i].question %>
+        </p>
+
+        <% for (let j=0; j < questionsValue.questions[i].answers.length; j++) { %>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="answerChar"
+              value="<%= questionsValue.questions[i].answers[j].answerChar %>"  required/>
+            <label class="form-check-label" for="answerChar">
+              <%= questionsValue.questions[i].answers[j].answerChar %> : <%=
+                  questionsValue.questions[i].answers[j].answer%>
+            </label>
+          </div>
+            <% } %>
+          <% } %>
+          <input type="hidden" name="questionNumber" value="<%= questionNumber %>">
+          <br><button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Submit</button>
+          </div></div>
+        </form>
+
+      <script>
+        window.addEventListener("pageshow", function (event) {
+          var historyTraversal = event.persisted ||
+            (typeof window.performance != "undefined" &&
+              window.performance.navigation.type === 2);
+          if (historyTraversal) {
+            // Handle page restore.
+            window.location.reload();
+          }
+        });
+      </script>
+       
+  <%- include('./partials/footer') %>

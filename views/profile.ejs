@@ -1,0 +1,85 @@
+<%- include('./partials/header') %>
+<body>
+    <form action="/profile" method="POST" class="form-floating mb-3">
+    <section class="vh-100 " >
+        <div class="container py-5 h-100  " >
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="/stageSelect"><span class="fw-bolder text-primary">CAP Advisor</span></a>  
+                </div>
+            </nav>
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-7 mb-4 mb-lg-0  " style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <div class="card mb-3" style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-white" 
+                                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; background: linear-gradient(90deg,#c42192, #2d2eea) ;">
+                                <img src="/images/avatar.png"
+                                    alt="Avatar" class="img-fluid my-5" />
+                                <h5><%= user.full_name %></h5><br>
+                                <i class="far fa-edit mb-5"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h5>Personal Information</h5>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3" >
+                                            <h6>Email</h6>
+                                            <input class="rounded" type="email" id="email" name="email" value="<%= user.email %>">
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Full Name</h6>
+                                            <input class="rounded" type="text" id="full_name" name="full_name" value="<%= user.full_name %>">
+                                        </div>
+                                    </div><br>
+                                    <h5>Contact Information</h5>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h6>Student ID</h6>
+                                            <input class="rounded" type="text" id="student_id" name="student_id" value="<%= user.student_id %>">
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>GitHub Account</h6>
+                                            <input class="rounded" type="text" id="github_account" name="github_account" value="<%= user.github_account %>">
+                                        </div> 
+                                        <h5><br>Reset Password</h5>
+                                        <hr class="mt-0 mb-4">
+                                        <div class="row pt-1">
+                                          <div class="col-6 mb-3">
+                                              <h6>New Password</h6>
+                                              <input class="rounded" type="password" id="password" name="password">
+                                          </div>
+                                          <div class="col-6 mb-3">
+                                            <h6>Confirm Password</h6>
+                                            <input class="rounded" type="password" id="confirm-password" name="confirm-password">
+                                          </div>
+                                        </div>
+                                        <h5><br>Skills</h5>
+                                        <hr class="mt-0 mb-4">
+                                        <div class="row pt-1">
+                                          <div class="col-6 mb-3">
+                                              <h6>Languages</h6>
+                                              <input class="rounded" type="text" id="languages" name="languages" value="<%= user.languages.join(', ') %>">
+                                          </div>
+                                          <div class="col-6 mb-3">
+                                            <a class="btn btn-primary " href="/plan">Go To CAP Plan</a>
+                                            <a class="btn btn-primary " href="/marks">Go To CS Plan</a><br><br>
+                                            <input type="submit" value="save" class="btn btn-primary">
+                                            
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </form>
+</body>
+  <%- include('./partials/footer') %>
+

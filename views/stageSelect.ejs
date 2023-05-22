@@ -1,0 +1,60 @@
+<%- include('./partials/header') %>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="/"><span class="fw-bolder text-primary">CAP Advisor</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                          <a href="/profile"> 
+                          <img src="/images/profile.png" ></a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Projects Section-->
+            <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Features</span></h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card 1-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center" >
+                                      <div class="p-5">
+                                        
+                                            <h2 class="fw-bolder">The Best Field For You</h2>
+                                            <p>Answer 10 Questions Honestly To Get A Clear Result For What Field Will Suit You More, Based on Your abilities & Preferences.</p>
+                                        </div>
+                                        <a href="/stage1">
+                                        <img class="img-fluid" src="/images/1.png" style="padding-top: 50px; padding-bottom: 50px; padding-right:70px; padding-left:50px;" alt="..." /></a>
+                                       </div>
+                                </div>
+                            </div>
+                            <!-- Project Card 2-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-5" >
+                                            <h2 class="fw-bolder">What To Choose, Software Engineering or Artificial Intelligance</h2>
+                                            <p>Answer 10 Questions Honestly To Get A Clear Result For in Which Track You Will Performe Better, Based on Your abilities & Preferences.</p>
+                                        </div>
+                                        
+                                        <a href="/stage2">
+                                        <img class="img-fluid" src="/images/2.png" style="  padding-right:50px; padding-left:60px;" alt="..." /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        
+  <%- include('./partials/footer') %>

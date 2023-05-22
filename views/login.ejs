@@ -1,0 +1,66 @@
+<%- include('./partials/header') %>
+<body class="d-flex flex-column">
+  <main class="flex-shrink-0">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/"><span class="fw-bolder text-primary">CAP Advisor</span></a>  
+        </div>
+    </nav>
+  <div class="login">
+   
+    
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                    <div class="text-center mb-5">
+                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                        <h1 class="fw-bolder">Welcome Back!</h1>
+                        <p class="lead fw-normal text-muted mb-0">Sign into your account</p>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                          <% if (errors && Object.keys(errors).length> 0) { %>
+                            <p style="color: red;">Please correct the following errors:</p>
+                            <ul>
+                              <% Object.values(errors).forEach(function(errorMessage) { %>
+                                <li>
+                                  <%= errorMessage %>
+                                </li>
+                                <% }); %>
+                            </ul>
+                            <% } %>
+                      
+                              <form action="/login" method="POST">
+                                <form  class="form-control-static" action="/registeration" method="POST">
+                      
+                                <div class="form-floating mb-3">
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="Enter email" required>
+                                </div>
+                      
+                                <div class="form-floating mb-3">
+                                  <label for="exampleInputPassword1">Password</label>
+                                  <input name="password" type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password" required>
+                                </div>
+                                <div class="d-grid">
+                                <button type="submit" class="btn btn-primary ">Submit</button><br>
+                                <div id="haveAccount" style=" text-align: center; ">
+                                 <p>Not a member! <a href="/registeration"> Sign Up</a></p> 
+                                 <p> or</p>
+                                 <button class="btn btn-lg btn-block btn-primary" style="background-color: #ffffff; color: #dd4b39;"
+                                 type="submit"><img src="/images/google_icon.png"><a href ="/auth/google/login">Sign in with google</a></button>
+                                </div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+   
+  <%- include('./partials/footer') %>
